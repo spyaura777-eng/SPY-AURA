@@ -11,7 +11,7 @@
 
 <body>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="header">
     <div class="logo">SPY AURA</div>
 
@@ -28,141 +28,162 @@
   </header>
 
 
-  <!-- Hero Section -->
+  <!-- HERO -->
   <section id="home" class="hero">
+
     <div class="hero-content">
-      <p class="small-title">WELCOME TO SPY AURA</p>
 
-      <h1>WEAR YOUR<br><span>AURA.</span></h1>
+      <p class="eyebrow">SPY AURA — EST. 2026</p>
 
-      <p>
-        Premium fashion made for people who want
-        to stand out from the crowd.
+      <h1>
+        WEAR<br>
+        YOUR <span>AURA.</span>
+      </h1>
+
+      <p class="hero-text">
+        Minimal fashion.<br>
+        Maximum attitude.
       </p>
 
-      <a href="#shop" class="shop-btn">SHOP NOW</a>
+      <a href="#shop" class="primary-btn">SHOP NOW</a>
+
     </div>
+
   </section>
 
 
-  <!-- Shop Section -->
+  <!-- SHOP -->
   <section id="shop" class="shop">
 
-    <p class="section-small">OUR COLLECTION</p>
-    <h2>Featured Products</h2>
+    <div class="section-heading">
+      <p>OUR COLLECTION</p>
+      <h2>FEATURED PRODUCTS</h2>
+    </div>
 
     <div class="products">
 
-      <!-- Product 1 -->
+      <!-- PRODUCT 1 -->
       <div class="product-card">
+
         <div class="product-image">
-          👕
+          <span>PRODUCT<br>IMAGE</span>
         </div>
 
-        <h3>SPY AURA Classic Tee</h3>
-        <p class="price">₹799</p>
+        <div class="product-info">
+          <h3>SPY AURA Classic Tee</h3>
+          <p class="price">₹799</p>
 
-        <button onclick="addToCart('SPY AURA Classic Tee', 799)">
-          Add to Cart
-        </button>
+          <button onclick="addToCart('SPY AURA Classic Tee', 799)">
+            ADD TO CART
+          </button>
+        </div>
+
       </div>
 
 
-      <!-- Product 2 -->
+      <!-- PRODUCT 2 -->
       <div class="product-card">
+
         <div class="product-image">
-          👔
+          <span>PRODUCT<br>IMAGE</span>
         </div>
 
-        <h3>SPY AURA Oversized Tee</h3>
-        <p class="price">₹999</p>
+        <div class="product-info">
+          <h3>SPY AURA Oversized Tee</h3>
+          <p class="price">₹999</p>
 
-        <button onclick="addToCart('SPY AURA Oversized Tee', 999)">
-          Add to Cart
-        </button>
+          <button onclick="addToCart('SPY AURA Oversized Tee', 999)">
+            ADD TO CART
+          </button>
+        </div>
+
       </div>
 
 
-      <!-- Product 3 -->
+      <!-- PRODUCT 3 -->
       <div class="product-card">
+
         <div class="product-image">
-          🧥
+          <span>PRODUCT<br>IMAGE</span>
         </div>
 
-        <h3>SPY AURA Premium Jacket</h3>
-        <p class="price">₹1,999</p>
+        <div class="product-info">
+          <h3>SPY AURA Premium Tee</h3>
+          <p class="price">₹1,199</p>
 
-        <button onclick="addToCart('SPY AURA Premium Jacket', 1999)">
-          Add to Cart
-        </button>
+          <button onclick="addToCart('SPY AURA Premium Tee', 1199)">
+            ADD TO CART
+          </button>
+        </div>
+
       </div>
 
     </div>
+
   </section>
 
 
-  <!-- About -->
+  <!-- ABOUT -->
   <section id="about" class="about">
 
-    <p class="section-small">ABOUT US</p>
+    <p class="eyebrow">ABOUT SPY AURA</p>
 
-    <h2>MORE THAN CLOTHING.</h2>
+    <h2>
+      SIMPLE.<br>
+      BOLD.<br>
+      <span>YOUR AURA.</span>
+    </h2>
 
     <p>
-      SPY AURA is a modern clothing brand created for
-      individuals who believe fashion is an expression
-      of personality, confidence and attitude.
+      SPY AURA is a clothing brand built around clean design,
+      confidence and individuality.
     </p>
 
   </section>
 
 
-  <!-- Contact -->
+  <!-- CONTACT / SHOP DETAILS -->
   <section id="contact" class="contact">
 
-    <p class="section-small">GET IN TOUCH</p>
+    <p class="eyebrow">VISIT US</p>
 
-    <h2>CONTACT SPY AURA</h2>
+    <h2>SPY AURA STORE</h2>
 
-    <p>Have a question about our products?</p>
+    <div class="contact-details">
 
-    <a class="contact-btn"
-       href="https://wa.me/919999999999"
-       target="_blank">
-      WhatsApp Us
-    </a>
+      <div>
+        <strong>ADDRESS</strong>
+        <p>Your shop address</p>
+      </div>
+
+      <div>
+        <strong>PHONE</strong>
+        <p>Your phone number</p>
+      </div>
+
+      <div>
+        <strong>WHATSAPP</strong>
+        <p>Your WhatsApp number</p>
+      </div>
+
+      <div>
+        <strong>OPENING HOURS</strong>
+        <p>10:00 AM — 9:00 PM</p>
+      </div>
+
+    </div>
 
   </section>
 
 
-  <!-- Footer -->
+  <!-- FOOTER -->
   <footer>
     <div class="logo">SPY AURA</div>
 
-    <p>© 2026 SPY AURA. All Rights Reserved.</p>
+    <p>
+      © 2026 SPY AURA. All rights reserved.
+    </p>
   </footer>
-
-
-  <!-- Cart Popup -->
-  <div id="cart-popup" class="cart-popup">
-
-    <div class="cart-box">
-
-      <button class="close-btn" onclick="closeCart()">×</button>
-
-      <h2>Your Cart</h2>
-
-      <div id="cart-items">
-        <p>Your cart is empty.</p>
-      </div>
-
-      <h3>
-        Total: ₹<span id="cart-total">0</span>
-      </h3>
-
-    </div>
-
-  </div>
 
 
   <script src="script.js"></script>
