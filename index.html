@@ -3,190 +3,394 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>SPY AURA | Clothing Brand</title>
-
+  <title>SPY AURA | Minimal Fashion</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+  <!-- ANNOUNCEMENT -->
+  <div class="announcement">
+    NEW DROP • FREE SHIPPING ON ORDERS OVER ₹999
+  </div>
+
   <!-- HEADER -->
   <header class="header">
-    <div class="logo">SPY AURA</div>
 
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <a href="#home" class="logo">SPY AURA</a>
+
+    <nav id="nav">
+      <a href="#home">HOME</a>
+      <a href="#shop">SHOP</a>
+      <a href="#men">MEN</a>
+      <a href="#women">WOMEN</a>
+      <a href="#about">ABOUT</a>
     </nav>
 
-    <button class="cart-btn" onclick="showCart()">
-      🛒 Cart <span id="cart-count">0</span>
-    </button>
+    <div class="header-actions">
+      <button onclick="searchProduct()" aria-label="Search">⌕</button>
+      <button onclick="showCart()" aria-label="Cart">
+        🛍 <span id="cartCount">0</span>
+      </button>
+    </div>
+
   </header>
 
+  <!-- CATEGORY BAR -->
+  <section class="categories">
+
+    <a href="#shop">
+      <div class="category-circle">NEW</div>
+      <span>NEW DROP</span>
+    </a>
+
+    <a href="#men">
+      <div class="category-circle">MEN</div>
+      <span>MEN</span>
+    </a>
+
+    <a href="#women">
+      <div class="category-circle">WOMEN</div>
+      <span>WOMEN</span>
+    </a>
+
+    <a href="#shop">
+      <div class="category-circle">TEE</div>
+      <span>TEES</span>
+    </a>
+
+    <a href="#shop">
+      <div class="category-circle">HD</div>
+      <span>HOODIES</span>
+    </a>
+
+    <a href="#shop">
+      <div class="category-circle">SALE</div>
+      <span>SALE</span>
+    </a>
+
+  </section>
 
   <!-- HERO -->
-  <section id="home" class="hero">
+  <main id="home">
 
-    <div class="hero-content">
+    <section class="hero">
 
-      <p class="eyebrow">SPY AURA — EST. 2026</p>
+      <div class="hero-image"></div>
 
-      <h1>
-        WEAR<br>
-        YOUR <span>AURA.</span>
-      </h1>
+      <div class="hero-content">
+        <p class="eyebrow">SPY AURA • EST. 2026</p>
 
-      <p class="hero-text">
-        Minimal fashion.<br>
-        Maximum attitude.
+        <h1>
+          WEAR<br>
+          YOUR <span>AURA.</span>
+        </h1>
+
+        <p class="hero-text">
+          Minimal fashion.<br>
+          Maximum attitude.
+        </p>
+
+        <a href="#shop" class="primary-btn">SHOP NOW</a>
+      </div>
+
+    </section>
+
+    <!-- OFFER -->
+    <section class="offer">
+      <div>
+        <small>SPY AURA ESSENTIALS</small>
+        <h2>UP TO 30% OFF</h2>
+      </div>
+
+      <a href="#shop">SHOP SALE →</a>
+    </section>
+
+    <!-- FEATURED -->
+    <section id="shop" class="products-section">
+
+      <div class="section-heading">
+        <div>
+          <p>OUR COLLECTION</p>
+          <h2>FEATURED PRODUCTS</h2>
+        </div>
+
+        <a href="#shop">VIEW ALL →</a>
+      </div>
+
+      <div class="products">
+
+        <!-- PRODUCT 1 -->
+        <article class="product-card">
+
+          <div class="product-image product-one">
+            <span class="badge">NEW</span>
+          </div>
+
+          <div class="product-info">
+            <p>SPY AURA</p>
+            <h3>Classic Black Tee</h3>
+
+            <div class="product-bottom">
+              <strong>₹799</strong>
+
+              <button onclick="addToCart('Classic Black Tee', 799)">
+                ADD +
+              </button>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- PRODUCT 2 -->
+        <article class="product-card">
+
+          <div class="product-image product-two">
+            <span class="badge">BESTSELLER</span>
+          </div>
+
+          <div class="product-info">
+            <p>SPY AURA</p>
+            <h3>Oversized White Tee</h3>
+
+            <div class="product-bottom">
+              <strong>₹899</strong>
+
+              <button onclick="addToCart('Oversized White Tee', 899)">
+                ADD +
+              </button>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- PRODUCT 3 -->
+        <article class="product-card">
+
+          <div class="product-image product-three">
+            <span class="badge">NEW</span>
+          </div>
+
+          <div class="product-info">
+            <p>SPY AURA</p>
+            <h3>Essential Black Hoodie</h3>
+
+            <div class="product-bottom">
+              <strong>₹1,499</strong>
+
+              <button onclick="addToCart('Essential Black Hoodie', 1499)">
+                ADD +
+              </button>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- PRODUCT 4 -->
+        <article class="product-card">
+
+          <div class="product-image product-four">
+            <span class="badge">LIMITED</span>
+          </div>
+
+          <div class="product-info">
+            <p>SPY AURA</p>
+            <h3>Minimal Grey Hoodie</h3>
+
+            <div class="product-bottom">
+              <strong>₹1,599</strong>
+
+              <button onclick="addToCart('Minimal Grey Hoodie', 1599)">
+                ADD +
+              </button>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- BRAND BANNER -->
+    <section class="brand-banner">
+
+      <div>
+        <p>THE AURA COLLECTION</p>
+        <h2>LESS NOISE.<br>MORE YOU.</h2>
+        <a href="#shop" class="light-btn">EXPLORE COLLECTION</a>
+      </div>
+
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+
+      <p>ABOUT SPY AURA</p>
+
+      <h2>
+        SIMPLE CLOTHES.<br>
+        STRONG AURA.
+      </h2>
+
+      <p class="about-text">
+        SPY AURA is built around minimal design, everyday comfort
+        and effortless style. No unnecessary noise. Just clothes
+        that speak for you.
       </p>
 
-      <a href="#shop" class="primary-btn">SHOP NOW</a>
+    </section>
 
-    </div>
-
-  </section>
-
-
-  <!-- SHOP -->
-  <section id="shop" class="shop">
-
-    <div class="section-heading">
-      <p>OUR COLLECTION</p>
-      <h2>FEATURED PRODUCTS</h2>
-    </div>
-
-    <div class="products">
-
-      <!-- PRODUCT 1 -->
-      <div class="product-card">
-
-        <div class="product-image">
-          <span>PRODUCT<br>IMAGE</span>
-        </div>
-
-        <div class="product-info">
-          <h3>SPY AURA Classic Tee</h3>
-          <p class="price">₹799</p>
-
-          <button onclick="addToCart('SPY AURA Classic Tee', 799)">
-            ADD TO CART
-          </button>
-        </div>
-
-      </div>
-
-
-      <!-- PRODUCT 2 -->
-      <div class="product-card">
-
-        <div class="product-image">
-          <span>PRODUCT<br>IMAGE</span>
-        </div>
-
-        <div class="product-info">
-          <h3>SPY AURA Oversized Tee</h3>
-          <p class="price">₹999</p>
-
-          <button onclick="addToCart('SPY AURA Oversized Tee', 999)">
-            ADD TO CART
-          </button>
-        </div>
-
-      </div>
-
-
-      <!-- PRODUCT 3 -->
-      <div class="product-card">
-
-        <div class="product-image">
-          <span>PRODUCT<br>IMAGE</span>
-        </div>
-
-        <div class="product-info">
-          <h3>SPY AURA Premium Tee</h3>
-          <p class="price">₹1,199</p>
-
-          <button onclick="addToCart('SPY AURA Premium Tee', 1199)">
-            ADD TO CART
-          </button>
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- ABOUT -->
-  <section id="about" class="about">
-
-    <p class="eyebrow">ABOUT SPY AURA</p>
-
-    <h2>
-      SIMPLE.<br>
-      BOLD.<br>
-      <span>YOUR AURA.</span>
-    </h2>
-
-    <p>
-      SPY AURA is a clothing brand built around clean design,
-      confidence and individuality.
-    </p>
-
-  </section>
-
-
-  <!-- CONTACT / SHOP DETAILS -->
-  <section id="contact" class="contact">
-
-    <p class="eyebrow">VISIT US</p>
-
-    <h2>SPY AURA STORE</h2>
-
-    <div class="contact-details">
-
-      <div>
-        <strong>ADDRESS</strong>
-        <p>Your shop address</p>
-      </div>
-
-      <div>
-        <strong>PHONE</strong>
-        <p>Your phone number</p>
-      </div>
-
-      <div>
-        <strong>WHATSAPP</strong>
-        <p>Your WhatsApp number</p>
-      </div>
-
-      <div>
-        <strong>OPENING HOURS</strong>
-        <p>10:00 AM — 9:00 PM</p>
-      </div>
-
-    </div>
-
-  </section>
-
+  </main>
 
   <!-- FOOTER -->
   <footer>
-    <div class="logo">SPY AURA</div>
 
-    <p>
-      © 2026 SPY AURA. All rights reserved.
-    </p>
+    <div class="footer-logo">SPY AURA</div>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <p>© 2026 SPY AURA. ALL RIGHTS RESERVED.</p>
+
   </footer>
 
+  <!-- CART POPUP -->
+  <div id="cartModal" class="cart-modal">
 
-  <script src="script.js"></script>
+    <div class="cart-box">
+
+      <button class="close-cart" onclick="closeCart()">×</button>
+
+      <h2>YOUR CART</h2>
+
+      <div id="cartItems"></div>
+
+      <div class="cart-total">
+        <span>TOTAL</span>
+        <strong id="cartTotal">₹0</strong>
+      </div>
+
+      <button class="checkout-btn" onclick="checkout()">
+        CHECKOUT
+      </button>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    let cart = [];
+
+    function addToCart(name, price) {
+
+      cart.push({
+        name: name,
+        price: price
+      });
+
+      updateCart();
+
+      alert(name + " added to cart!");
+
+    }
+
+    function updateCart() {
+
+      document.getElementById("cartCount").textContent = cart.length;
+
+      let items = document.getElementById("cartItems");
+
+      if (cart.length === 0) {
+
+        items.innerHTML = "<p class='empty-cart'>Your cart is empty.</p>";
+
+      } else {
+
+        items.innerHTML = cart.map((item, index) => `
+          <div class="cart-item">
+            <div>
+              <strong>${item.name}</strong>
+              <p>₹${item.price}</p>
+            </div>
+
+            <button onclick="removeItem(${index})">×</button>
+          </div>
+        `).join("");
+
+      }
+
+      let total = cart.reduce((sum, item) => sum + item.price, 0);
+
+      document.getElementById("cartTotal").textContent =
+        "₹" + total.toLocaleString("en-IN");
+
+    }
+
+    function removeItem(index) {
+
+      cart.splice(index, 1);
+
+      updateCart();
+
+    }
+
+    function showCart() {
+
+      document.getElementById("cartModal").classList.add("active");
+
+      updateCart();
+
+    }
+
+    function closeCart() {
+
+      document.getElementById("cartModal").classList.remove("active");
+
+    }
+
+    function checkout() {
+
+      if (cart.length === 0) {
+
+        alert("Your cart is empty.");
+
+      } else {
+
+        alert("Checkout coming soon!");
+
+      }
+
+    }
+
+    function toggleMenu() {
+
+      document.getElementById("nav").classList.toggle("active");
+
+    }
+
+    function searchProduct() {
+
+      const search = prompt("What are you looking for?");
+
+      if (search) {
+
+        alert("Searching for: " + search);
+
+      }
+
+    }
+
+    updateCart();
+
+  </script>
 
 </body>
 </html>
