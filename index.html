@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+
+  <title>SPY AURA — WHERE IS YOUR AURA</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- LOGIN -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-box">
+
+      <div class="spider-logo">🕷</div>
+
+      <div class="brand-small">SPY AURA</div>
+
+      <h1>WHERE IS<br>YOUR AURA?</h1>
+
+      <p>PREMIUM STREETWEAR FOR BOYS</p>
+
+      <input
+        id="loginPhone"
+        type="tel"
+        maxlength="10"
+        placeholder="Enter mobile number"
+      >
+
+      <button onclick="loginUser()" class="main-btn">
+        ENTER AURA
+      </button>
+
+      <small>10 digit Indian mobile number required</small>
+
+    </div>
+  </div>
+
+
+  <!-- MAIN WEBSITE -->
+  <div id="website" class="hidden">
+
+    <!-- HEADER -->
+    <header class="header">
+
+      <div class="logo-area">
+        <span class="mini-spider">🕷</span>
+        <span>SPY AURA</span>
+      </div>
+
+      <button class="cart-btn" onclick="openCart()">
+        🛒 <span>CART</span>
+        <b id="cartCount">0</b>
+      </button>
+
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">WELCOME TO SPY AURA</p>
+
+        <h1>
+          WHERE IS<br>
+          <span>YOUR AURA?</span>
+        </h1>
+
+        <p class="hero-text">
+          Premium fashion made for boys who want to stand out from the crowd.
+        </p>
+
+        <button class="main-btn" onclick="scrollToProducts()">
+          SHOP NOW
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- AD -->
+    <section class="ad-banner">
+
+      <div>
+        <p>SPY AURA DROP 01</p>
+        <h2>BAGGY. BOLD. DIFFERENT.</h2>
+        <span>NEW STREETWEAR COLLECTION</span>
+      </div>
+
+      <div class="ad-spider">🕷</div>
+
+    </section>
+
+
+    <!-- FILTER -->
+    <section class="shop-section" id="productsSection">
+
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">FOR THE BOYS</p>
+          <h2>AURA COLLECTION</h2>
+        </div>
+
+        <select id="categoryFilter" onchange="filterProducts()">
+          <option value="all">ALL</option>
+          <option value="tshirt">T-SHIRTS</option>
+          <option value="hoodie">HOODIES</option>
+          <option value="pants">BAGGY PANTS</option>
+        </select>
+      </div>
+
+
+      <div id="productGrid" class="product-grid"></div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="about-section">
+
+      <div class="about-logo">🕷</div>
+
+      <p class="eyebrow">WHY SPY AURA?</p>
+
+      <h2>DON'T FOLLOW<br>THE CROWD.</h2>
+
+      <p>
+        SPY AURA is made for the youth who create their own style.
+        Oversized fits, baggy silhouettes and dark street energy.
+      </p>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <footer>
+
+      <div class="footer-logo">
+        🕷 SPY AURA
+      </div>
+
+      <p>WHERE IS YOUR AURA?</p>
+
+      <div class="contact-details">
+
+        <a href="tel:7330985591">
+          PHONE: 7330985591
+        </a>
+
+        <a href="mailto:swamysode7@gmail.com">
+          EMAIL: swamysode7@gmail.com
+        </a>
+
+        <a
+          href="https://instagram.com/shyy.spidyy"
+          target="_blank"
+          rel="noopener"
+        >
+          INSTAGRAM: @shyy.spidyy
+        </a>
+
+      </div>
+
+      <p class="copyright">
+        © 2026 SPY AURA. ALL RIGHTS RESERVED.
+      </p>
+
+    </footer>
+
+  </div>
+
+
+  <!-- PRODUCT MODAL -->
+  <div id="productModal" class="modal hidden">
+
+    <div class="modal-box">
+
+      <button class="close-btn" onclick="closeProduct()">
+        ×
+      </button>
+
+      <div class="modal-image-wrapper">
+        <img id="modalImage" src="" alt="Product">
+        <span>PINCH / ZOOM</span>
+      </div>
+
+      <div class="modal-info">
+
+        <p id="modalCategory" class="product-category"></p>
+
+        <h2 id="modalName"></h2>
+
+        <div class="modal-price">
+          ₹<span id="modalPrice"></span>
+        </div>
+
+        <p id="modalDescription"></p>
+
+        <div class="size-row">
+
+          <button onclick="selectSize(this)">S</button>
+          <button onclick="selectSize(this)">M</button>
+          <button onclick="selectSize(this)">L</button>
+          <button onclick="selectSize(this)">XL</button>
+          <button onclick="selectSize(this)">XXL</button>
+
+        </div>
+
+        <button class="main-btn full-btn" onclick="addModalProduct()">
+          ADD TO CART
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- CART -->
+  <div id="cartModal" class="modal hidden">
+
+    <div class="cart-box">
+
+      <button class="close-btn" onclick="closeCart()">
+        ×
+      </button>
+
+      <p class="eyebrow">YOUR AURA</p>
+
+      <h2>YOUR CART</h2>
+
+      <div id="cartItems"></div>
+
+      <div class="cart-total">
+        <span>TOTAL</span>
+        <strong>₹<span id="cartTotal">0</span></strong>
+      </div>
+
+      <button
+        id="checkoutButton"
+        class="main-btn full-btn"
+        onclick="openCheckout()"
+      >
+        ORDER NOW
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- CHECKOUT -->
+  <div id="checkoutModal" class="modal hidden">
+
+    <div class="checkout-box">
+
+      <button class="close-btn" onclick="closeCheckout()">
+        ×
+      </button>
+
+      <p class="eyebrow">FINAL STEP</p>
+
+      <h2>DELIVERY DETAILS</h2>
+
+      <form
+        id="orderForm"
+        action="https://formsubmit.co/swamysode7@gmail.com"
+        method="POST"
+        onsubmit="return placeOrder(event)"
+      >
+
+        <input type="hidden" name="_subject" value="NEW SPY AURA ORDER">
+        <input type="hidden" name="_captcha" value="false">
+
+        <input
+          id="customerName"
+          name="Customer Name"
+          type="text"
+          placeholder="Full Name"
+          required
+        >
+
+        <input
+          id="customerPhone"
+          name="Phone Number"
+          type="tel"
+          maxlength="10"
+          placeholder="Phone Number"
+          required
+        >
+
+        <textarea
+          id="customerAddress"
+          name="Address"
+          placeholder="Complete Address"
+          required
+        ></textarea>
+
+        <input
+          id="customerLandmark"
+          name="Landmark"
+          type="text"
+          placeholder="Landmark"
+          required
+        >
+
+        <input
+          id="customerPincode"
+          name="Pincode"
+          type="text"
+          maxlength="6"
+          placeholder="Pincode"
+          required
+        >
+
+        <textarea
+          id="orderDetails"
+          name="Order Details"
+          readonly
+        ></textarea>
+
+
+        <div class="payment-title">
+          SELECT PAYMENT
+        </div>
+
+        <div class="payment-options">
+
+          <label>
+            <input
+              type="radio"
+              name="Payment"
+              value="PhonePe"
+              checked
+            >
+            <span>PhonePe</span>
+          </label>
+
+          <label>
+            <input
+              type="radio"
+              name="Payment"
+              value="Paytm"
+            >
+            <span>Paytm</span>
+          </label>
+
+        </div>
+
+
+        <div id="incorrectMessage" class="incorrect hidden">
+          INCORRECT DETAILS. PLEASE CHECK AGAIN.
+        </div>
+
+
+        <button type="submit" class="main-btn full-btn">
+          PLACE ORDER
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- SUCCESS -->
+  <div id="successModal" class="modal hidden">
+
+    <div class="success-box">
+
+      <div class="success-spider">🕷</div>
+
+      <h1>THANK YOU<br>AURA.</h1>
+
+      <p>
+        YOUR ORDER HAS BEEN RECEIVED.
+      </p>
+
+      <p class="success-small">
+        We will contact you shortly for order confirmation.
+      </p>
+
+      <button class="main-btn" onclick="finishOrder()">
+        CONTINUE SHOPPING
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
