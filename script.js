@@ -940,19 +940,3 @@ document.addEventListener("click", event => {
   }
 
 });
-
-const products = [
-  {
-    id: "AURA-JEANS-001",
-    name: "AURA Oversized Baggy Jeans",
-    price: 1499,
-    images: [
-      "1000010452.jpg",
-      "1000010451.jpg",
-      "1000010450.jpg",
-      "1000010455.jpg",
-      "1000010454.jpg",
-      "1000010453.jpg"
-    ]
-  }
-];
