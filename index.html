@@ -3,394 +3,430 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SPY AURA | Minimal Fashion</title>
+  <title>SPY AURA — WHERE IS YOUR AURA?</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- ANNOUNCEMENT -->
-  <div class="announcement">
-    NEW DROP • FREE SHIPPING ON ORDERS OVER ₹999
+<div id="loginScreen" class="screen">
+  <div class="login-card">
+    <div class="spider">🕷</div>
+    <h1>SPY AURA</h1>
+    <p>WHERE IS YOUR AURA?</p>
+
+    <input
+      id="loginPhone"
+      type="tel"
+      maxlength="10"
+      placeholder="Mobile number"
+    >
+
+    <button onclick="login()">CONTINUE</button>
+
+    <small>
+      Enter your 10-digit mobile number to continue.
+    </small>
+  </div>
+</div>
+
+
+<header>
+
+  <button class="icon-btn" onclick="toggleMenu()">☰</button>
+
+  <a class="brand" href="#home">
+    🕷 SPY AURA
+  </a>
+
+  <nav id="nav">
+    <a href="#home">HOME</a>
+    <a href="#shop">SHOP</a>
+    <a href="#new">NEW</a>
+    <a href="#about">ABOUT</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <div class="actions">
+    <button onclick="openSearch()">⌕</button>
+
+    <button onclick="openCart()">
+      🛍 <b id="cartCount">0</b>
+    </button>
   </div>
 
-  <!-- HEADER -->
-  <header class="header">
+</header>
 
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <a href="#home" class="logo">SPY AURA</a>
+<div class="sale-strip">
+  BOYS ONLY • NEW DROP • FREE SHIPPING ABOVE ₹999
+</div>
 
-    <nav id="nav">
-      <a href="#home">HOME</a>
-      <a href="#shop">SHOP</a>
-      <a href="#men">MEN</a>
-      <a href="#women">WOMEN</a>
-      <a href="#about">ABOUT</a>
-    </nav>
 
-    <div class="header-actions">
-      <button onclick="searchProduct()" aria-label="Search">⌕</button>
-      <button onclick="showCart()" aria-label="Cart">
-        🛍 <span id="cartCount">0</span>
-      </button>
-    </div>
+<main id="home">
 
-  </header>
+<section class="hero">
 
-  <!-- CATEGORY BAR -->
-  <section class="categories">
+  <div>
 
-    <a href="#shop">
-      <div class="category-circle">NEW</div>
-      <span>NEW DROP</span>
+    <div class="spider big">🕷</div>
+
+    <p class="eyebrow">
+      SPY AURA • EST. 2026
+    </p>
+
+    <h2>
+      WHERE IS<br>
+      YOUR <span>AURA?</span>
+    </h2>
+
+    <p>
+      Minimal menswear.<br>
+      Maximum attitude.
+    </p>
+
+    <a href="#shop" class="btn">
+      SHOP NOW
     </a>
 
-    <a href="#men">
-      <div class="category-circle">MEN</div>
-      <span>MEN</span>
-    </a>
+  </div>
 
-    <a href="#women">
-      <div class="category-circle">WOMEN</div>
-      <span>WOMEN</span>
-    </a>
+</section>
 
-    <a href="#shop">
-      <div class="category-circle">TEE</div>
-      <span>TEES</span>
-    </a>
 
-    <a href="#shop">
-      <div class="category-circle">HD</div>
-      <span>HOODIES</span>
-    </a>
+<section class="categories">
 
-    <a href="#shop">
-      <div class="category-circle">SALE</div>
-      <span>SALE</span>
-    </a>
+  <button onclick="filterProducts('all')">
+    ALL
+  </button>
 
-  </section>
+  <button onclick="filterProducts('tshirt')">
+    T-SHIRTS
+  </button>
 
-  <!-- HERO -->
-  <main id="home">
+  <button onclick="filterProducts('hoodie')">
+    HOODIES
+  </button>
 
-    <section class="hero">
+  <button onclick="filterProducts('shirt')">
+    SHIRTS
+  </button>
 
-      <div class="hero-image"></div>
+  <button onclick="filterProducts('pants')">
+    PANTS
+  </button>
 
-      <div class="hero-content">
-        <p class="eyebrow">SPY AURA • EST. 2026</p>
+  <button onclick="filterProducts('sale')">
+    SALE
+  </button>
 
-        <h1>
-          WEAR<br>
-          YOUR <span>AURA.</span>
-        </h1>
+</section>
 
-        <p class="hero-text">
-          Minimal fashion.<br>
-          Maximum attitude.
-        </p>
 
-        <a href="#shop" class="primary-btn">SHOP NOW</a>
-      </div>
+<section class="ad">
 
-    </section>
+  <div>
+    <small>THE AURA SALE</small>
 
-    <!-- OFFER -->
-    <section class="offer">
-      <div>
-        <small>SPY AURA ESSENTIALS</small>
-        <h2>UP TO 30% OFF</h2>
-      </div>
+    <h3>
+      UP TO 30% OFF
+    </h3>
 
-      <a href="#shop">SHOP SALE →</a>
-    </section>
+    <p>
+      Limited pieces. Boys only.
+    </p>
+  </div>
 
-    <!-- FEATURED -->
-    <section id="shop" class="products-section">
+  <a href="#shop" class="btn dark">
+    SHOP SALE
+  </a>
 
-      <div class="section-heading">
-        <div>
-          <p>OUR COLLECTION</p>
-          <h2>FEATURED PRODUCTS</h2>
-        </div>
+</section>
 
-        <a href="#shop">VIEW ALL →</a>
-      </div>
 
-      <div class="products">
+<section id="shop" class="section">
 
-        <!-- PRODUCT 1 -->
-        <article class="product-card">
+  <div class="heading">
 
-          <div class="product-image product-one">
-            <span class="badge">NEW</span>
-          </div>
-
-          <div class="product-info">
-            <p>SPY AURA</p>
-            <h3>Classic Black Tee</h3>
-
-            <div class="product-bottom">
-              <strong>₹799</strong>
-
-              <button onclick="addToCart('Classic Black Tee', 799)">
-                ADD +
-              </button>
-            </div>
-          </div>
-
-        </article>
-
-        <!-- PRODUCT 2 -->
-        <article class="product-card">
-
-          <div class="product-image product-two">
-            <span class="badge">BESTSELLER</span>
-          </div>
-
-          <div class="product-info">
-            <p>SPY AURA</p>
-            <h3>Oversized White Tee</h3>
-
-            <div class="product-bottom">
-              <strong>₹899</strong>
-
-              <button onclick="addToCart('Oversized White Tee', 899)">
-                ADD +
-              </button>
-            </div>
-          </div>
-
-        </article>
-
-        <!-- PRODUCT 3 -->
-        <article class="product-card">
-
-          <div class="product-image product-three">
-            <span class="badge">NEW</span>
-          </div>
-
-          <div class="product-info">
-            <p>SPY AURA</p>
-            <h3>Essential Black Hoodie</h3>
-
-            <div class="product-bottom">
-              <strong>₹1,499</strong>
-
-              <button onclick="addToCart('Essential Black Hoodie', 1499)">
-                ADD +
-              </button>
-            </div>
-          </div>
-
-        </article>
-
-        <!-- PRODUCT 4 -->
-        <article class="product-card">
-
-          <div class="product-image product-four">
-            <span class="badge">LIMITED</span>
-          </div>
-
-          <div class="product-info">
-            <p>SPY AURA</p>
-            <h3>Minimal Grey Hoodie</h3>
-
-            <div class="product-bottom">
-              <strong>₹1,599</strong>
-
-              <button onclick="addToCart('Minimal Grey Hoodie', 1599)">
-                ADD +
-              </button>
-            </div>
-          </div>
-
-        </article>
-
-      </div>
-
-    </section>
-
-    <!-- BRAND BANNER -->
-    <section class="brand-banner">
-
-      <div>
-        <p>THE AURA COLLECTION</p>
-        <h2>LESS NOISE.<br>MORE YOU.</h2>
-        <a href="#shop" class="light-btn">EXPLORE COLLECTION</a>
-      </div>
-
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about">
-
-      <p>ABOUT SPY AURA</p>
+    <div>
+      <small>OUR COLLECTION</small>
 
       <h2>
-        SIMPLE CLOTHES.<br>
-        STRONG AURA.
+        FEATURED FOR HIM
       </h2>
-
-      <p class="about-text">
-        SPY AURA is built around minimal design, everyday comfort
-        and effortless style. No unnecessary noise. Just clothes
-        that speak for you.
-      </p>
-
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-
-    <div class="footer-logo">SPY AURA</div>
-
-    <div class="footer-links">
-      <a href="#home">Home</a>
-      <a href="#shop">Shop</a>
-      <a href="#about">About</a>
-      <a href="#">Contact</a>
-    </div>
-
-    <p>© 2026 SPY AURA. ALL RIGHTS RESERVED.</p>
-
-  </footer>
-
-  <!-- CART POPUP -->
-  <div id="cartModal" class="cart-modal">
-
-    <div class="cart-box">
-
-      <button class="close-cart" onclick="closeCart()">×</button>
-
-      <h2>YOUR CART</h2>
-
-      <div id="cartItems"></div>
-
-      <div class="cart-total">
-        <span>TOTAL</span>
-        <strong id="cartTotal">₹0</strong>
-      </div>
-
-      <button class="checkout-btn" onclick="checkout()">
-        CHECKOUT
-      </button>
-
     </div>
 
   </div>
 
-  <script>
+  <div id="products" class="grid"></div>
 
-    let cart = [];
+</section>
 
-    function addToCart(name, price) {
 
-      cart.push({
-        name: name,
-        price: price
-      });
+<section id="new" class="feature-banner">
 
-      updateCart();
+  <div>
 
-      alert(name + " added to cart!");
+    <small>NEW AURA DROP</small>
 
-    }
+    <h2>
+      BUILT FOR<br>
+      YOUR MOOD.
+    </h2>
 
-    function updateCart() {
+    <a href="#shop" class="btn">
+      EXPLORE
+    </a>
 
-      document.getElementById("cartCount").textContent = cart.length;
+  </div>
 
-      let items = document.getElementById("cartItems");
+</section>
 
-      if (cart.length === 0) {
 
-        items.innerHTML = "<p class='empty-cart'>Your cart is empty.</p>";
+<section id="about" class="about">
 
-      } else {
+  <div class="spider">
+    🕷
+  </div>
 
-        items.innerHTML = cart.map((item, index) => `
-          <div class="cart-item">
-            <div>
-              <strong>${item.name}</strong>
-              <p>₹${item.price}</p>
-            </div>
+  <small>
+    ABOUT SPY AURA
+  </small>
 
-            <button onclick="removeItem(${index})">×</button>
-          </div>
-        `).join("");
+  <h2>
+    LESS NOISE.<br>
+    MORE AURA.
+  </h2>
 
-      }
+  <p>
+    SPY AURA is a boys-only clothing label
+    focused on clean silhouettes, everyday comfort
+    and confident street style.
+  </p>
 
-      let total = cart.reduce((sum, item) => sum + item.price, 0);
+</section>
 
-      document.getElementById("cartTotal").textContent =
-        "₹" + total.toLocaleString("en-IN");
+</main>
 
-    }
 
-    function removeItem(index) {
+<footer id="contact">
 
-      cart.splice(index, 1);
+  <div class="brand">
+    🕷 SPY AURA
+  </div>
 
-      updateCart();
+  <p>
+    BOYS ONLY • MINIMAL FASHION • EST. 2026
+  </p>
 
-    }
+  <div class="contact">
 
-    function showCart() {
+    <a href="tel:7330985591">
+      Phone: 7330985591
+    </a>
 
-      document.getElementById("cartModal").classList.add("active");
+    <a href="mailto:swamysode7@gmail.com">
+      Email: swamysode7@gmail.com
+    </a>
 
-      updateCart();
+    <span>
+      Instagram: @shyy.spidyy
+    </span>
 
-    }
+  </div>
 
-    function closeCart() {
+  <small>
+    © 2026 SPY AURA. All rights reserved.
+  </small>
 
-      document.getElementById("cartModal").classList.remove("active");
+</footer>
 
-    }
 
-    function checkout() {
 
-      if (cart.length === 0) {
+<!-- CART -->
 
-        alert("Your cart is empty.");
+<div id="cartModal" class="modal">
 
-      } else {
+  <div class="panel">
 
-        alert("Checkout coming soon!");
+    <button
+      class="close"
+      onclick="closeModal('cartModal')">
+      ×
+    </button>
 
-      }
+    <h2>
+      YOUR AURA CART
+    </h2>
 
-    }
+    <div id="cartItems"></div>
 
-    function toggleMenu() {
+    <div class="total">
 
-      document.getElementById("nav").classList.toggle("active");
+      <span>
+        TOTAL
+      </span>
 
-    }
+      <b id="total">
+        ₹0
+      </b>
 
-    function searchProduct() {
+    </div>
 
-      const search = prompt("What are you looking for?");
+    <button
+      class="btn dark full"
+      onclick="openCheckout()">
+      ORDER NOW
+    </button>
 
-      if (search) {
+  </div>
 
-        alert("Searching for: " + search);
+</div>
 
-      }
 
-    }
 
-    updateCart();
+<!-- CHECKOUT -->
 
-  </script>
+<div id="checkoutModal" class="modal">
+
+  <div class="panel">
+
+    <button
+      class="close"
+      onclick="closeModal('checkoutModal')">
+      ×
+    </button>
+
+    <h2>
+      DELIVERY DETAILS
+    </h2>
+
+    <input
+      id="name"
+      placeholder="Full name"
+    >
+
+    <input
+      id="phone"
+      type="tel"
+      placeholder="Phone number"
+    >
+
+    <input
+      id="address"
+      placeholder="Full address"
+    >
+
+    <input
+      id="landmark"
+      placeholder="Landmark"
+    >
+
+    <input
+      id="city"
+      placeholder="City"
+    >
+
+    <input
+      id="pincode"
+      maxlength="6"
+      placeholder="Pincode"
+    >
+
+    <select id="payment">
+
+      <option value="">
+        Choose payment method
+      </option>
+
+      <option>
+        UPI / PhonePe
+      </option>
+
+      <option>
+        Paytm
+      </option>
+
+      <option>
+        Cash on Delivery
+      </option>
+
+    </select>
+
+    <p class="notice">
+      Select your preferred payment method.
+    </p>
+
+    <button
+      class="btn dark full"
+      onclick="placeOrder()">
+      PLACE ORDER
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<!-- THANK YOU -->
+
+<div id="successModal" class="modal">
+
+  <div class="panel success">
+
+    <div class="spider big">
+      🕷
+    </div>
+
+    <h2>
+      THANK YOU, AURA
+    </h2>
+
+    <p id="orderMessage"></p>
+
+    <button
+      class="btn dark full"
+      onclick="closeModal('successModal')">
+      CONTINUE SHOPPING
+    </button>
+
+  </div>
+
+</div>
+
+
+
+<!-- SEARCH -->
+
+<div id="searchModal" class="modal">
+
+  <div class="panel">
+
+    <button
+      class="close"
+      onclick="closeModal('searchModal')">
+      ×
+    </button>
+
+    <h2>
+      SEARCH
+    </h2>
+
+    <input
+      id="searchInput"
+      placeholder="Search tees, hoodies..."
+      oninput="searchProducts()"
+    >
+
+    <div id="searchResults"></div>
+
+  </div>
+
+</div>
+
+
+<script src="script.js"></script>
 
 </body>
 </html>
